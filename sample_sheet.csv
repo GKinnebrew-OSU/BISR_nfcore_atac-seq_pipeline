@@ -1,0 +1,7 @@
+sample,fastq_1,fastq_2,replicate
+Infctd_rep1,./data/ATAC-seq/01.RawData/Infctd_rep1/Infctd_rep1_CKDL250024531-1A_22WVT7LT4_L1_1.fq.gz,./data/ATAC-seq/01.RawData/Infctd_rep1/Infctd_rep1_CKDL250024531-1A_22WVT7LT4_L1_2.fq.gz,1
+Infctd_rep2,./data/ATAC-seq/01.RawData/Infctd_rep2/Infctd_rep2_CKDL250024532-1A_22WVT7LT4_L1_1.fq.gz,./data/ATAC-seq/01.RawData/Infctd_rep2/Infctd_rep2_CKDL250024532-1A_22WVT7LT4_L1_2.fq.gz,1
+Infctd_rep3,./data/ATAC-seq/01.RawData/Infctd_rep3/Infctd_rep3_CKDL250024533-1A_22WVT7LT4_L1_1.fq.gz,./data/ATAC-seq/01.RawData/Infctd_rep3/Infctd_rep3_CKDL250024533-1A_22WVT7LT4_L1_2.fq.gz,1
+Uninfctd_rep1,./data/ATAC-seq/01.RawData/Uninfctd_rep1/Uninfctd_rep1_CKDL250024528-1A_22WVT7LT4_L2_1.fq.gz,./data/ATAC-seq/01.RawData/Uninfctd_rep1/Uninfctd_rep1_CKDL250024528-1A_22WVT7LT4_L2_2.fq.gz,1
+Uninfctd_rep2,./data/ATAC-seq/01.RawData/Uninfctd_rep2/Uninfctd_rep2_CKDL250024529-1A_22WVT7LT4_L1_1.fq.gz,./data/ATAC-seq/01.RawData/Uninfctd_rep2/Uninfctd_rep2_CKDL250024529-1A_22WVT7LT4_L1_2.fq.gz,1
+Uninfctd_rep3,./data/ATAC-seq/01.RawData/Uninfctd_rep3/Uninfctd_rep3_CKDL250024530-1A_22WVT7LT4_L1_1.fq.gz,./data/ATAC-seq/01.RawData/Uninfctd_rep3/Uninfctd_rep3_CKDL250024530-1A_22WVT7LT4_L1_2.fq.gz,1
