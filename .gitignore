@@ -1,0 +1,15 @@
+# Results
+results*/
+
+# Nextflow logs
+.nextflow/
+.nextflow.log*
+
+
+# Data
+data/
+*.gz
+
+# Intermediate files/folders
+work/
+*.tmp/

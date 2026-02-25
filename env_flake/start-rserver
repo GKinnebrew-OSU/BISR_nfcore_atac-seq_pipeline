@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Print startup message (decode from base64)
+if [ -n "$RSERVER_START_MSG" ]; then
+  echo "$RSERVER_START_MSG" | base64 -d 1>&2
+fi
+
+# define/create server data dir
+SERVER_DATA_DIR=/tmp/rstudio-server-${USER}
+mkdir -p "${SERVER_DATA_DIR}"
+
+if [ -z "$USER" ]; then
+  echo "No \$USER set"
+  exit 1
+fi
+
+if [ -z "$SOCKET" ]; then
+  echo "No \$SOCKET set"
+  exit 1
+fi
+
+# set a user-specific secure cookie key
+COOKIE_KEY_PATH="${SERVER_DATA_DIR}/secure-cookie-key"
+rm -f "$COOKIE_KEY_PATH"
+cat /proc/sys/kernel/random/uuid > "$COOKIE_KEY_PATH"
+chmod 600 "$COOKIE_KEY_PATH"
+
+
+# Rserver >= version 1.3 requires the --auth-revocation-list-dir parameter
+REVOCATION_LIST_DIR="${SERVER_DATA_DIR}/revocation-list-dir"
+mkdir -p "$REVOCATION_LIST_DIR"
+
+# Export locale variables
+export LANG="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+
+cmd=(
+  rserver
+  --server-user="$USER"
+  --server-daemonize=0
+  --www-socket="$SOCKET"
+  --server-data-dir="$SERVER_DATA_DIR"
+  --secure-cookie-key-file="$COOKIE_KEY_PATH"
+  --auth-none=1
+  --auth-timeout-minutes=0
+  --auth-stay-signed-in-days=30
+  --auth-revocation-list-dir="$REVOCATION_LIST_DIR"
+  --rsession-memory-limit-mb=0
+)
+
+exec "${cmd[@]}"
+
