@@ -7,7 +7,7 @@ results*/
 
 
 # Data
-data/
+/data
 *.gz
 
 # Intermediate files/folders

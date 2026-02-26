@@ -2,7 +2,7 @@
 
 #module load java/21.0.2
 
-TAG="bowtie2"
+TAG="bowtie2.narrow"
 
 args=(
   run nf-core/atacseq
